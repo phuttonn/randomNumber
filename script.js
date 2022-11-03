@@ -13,11 +13,12 @@ let guessCount = 1; // initialize guessCount at 1
 let resetButton;
 
 function checkGuess() {
-    const userGuess = Number(guessField.value);
+    const userGuess = Number(guessField.value); //declares variable which takes number from user
+
     if (guessCount === 1) {
         guesses.textContent = "Previous guesses: ";
     }
-    guesses.textContent += `${userGuess}`;
+    guesses.textContent += `${userGuess} `;
 
     if (userGuess === randomNumber) {
         lastResult.Result = "Congrats you go 'er right!";
@@ -42,3 +43,5 @@ function checkGuess() {
     guessField.value = "";
     guessField.focus();
 }
+
+guessSubmit.addEventListener("click", checkGuess);
