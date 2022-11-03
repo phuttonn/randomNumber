@@ -1,4 +1,22 @@
 body {
     background-color: rgb(50, 50, 50);
     color: rgb(245, 245, 200);
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form input[type="number"] {
+    width: 200px;
+}
+
+.lastResult {
+    color: white;
+    padding: 3px;
 }
