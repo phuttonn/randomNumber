@@ -11,3 +11,7 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1; // initialize guessCount at 1
 let resetButton;
+
+function checkGuess() {
+    alert("I'm a placeholder");
+}
