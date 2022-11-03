@@ -24,7 +24,7 @@ function checkGuess() {
         lastResult.textContent = "Congrats you got 'er right!";
         lastResult.style.color = "green";
         lowOrHi.textContent = "";
-        setGameOver(); // function yet to be created!!
+        setGameOver(); 
     } else if (guessCount === 10) {
         lastResult.textContent = "!!! GAME OVER !!!";
         lowOrHi.textContent = "";
@@ -53,4 +53,24 @@ function gameOver() {
     resetButton.textContent = "Start new game"; // give new button content
     document.body.append(resetButton); // add button to out HTML
     resetButton.addEventListener("click", resetGame); // make it clickable; resets game
+}
+
+function resetGame() {
+    guessCount = 1;
+
+    const resetParas = document.querySelectorAll("resultParas p");
+    for (const resetPara of resetParas) {
+        resetPara.textContent = "";
+    }
+
+    resetButton.parentNode.removeChild(resetButton); // removes New game button from HTML
+
+    guessField.disabled = false; // enables text field
+    guessSubmit.disabled =  false; //enables submit button
+    guessField.value = ""; // clears text field
+    guessField.focus();
+
+    lastResult.style.color = "rgb( 245 245 200"; // removes text color from previous guess
+
+    randomNumber = Math.floor(Math.random() * 100) + 1;
 }
