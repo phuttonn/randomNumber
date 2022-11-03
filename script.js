@@ -59,7 +59,7 @@ function gameOver() {
 function resetGame() {
     guessCount = 1;
 
-    const resetParas = document.querySelectorAll("resultParas p");
+    const resetParas = document.querySelectorAll(".resultParas p");
     for (const resetPara of resetParas) {
         resetPara.textContent = "";
     }
