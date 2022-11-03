@@ -25,11 +25,11 @@ function checkGuess() {
         lastResult.textContent = "Congrats you got 'er right!";
         lastResult.style.color = "green";
         lowOrHi.textContent = "";
-        setGameOver(); 
+        gameOver(); 
     } else if (guessCount === 10) {
         lastResult.textContent = "!!! GAME OVER !!!";
         lowOrHi.textContent = "";
-        setGameOver();
+        gameOver();
     } else {
         lastResult.textContent ="Wrong! Guess again"
         lastResult.style.color = "red";
