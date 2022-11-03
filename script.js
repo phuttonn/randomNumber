@@ -21,7 +21,7 @@ function checkGuess() {
     guesses.textContent += `${userGuess} `;
 
     if (userGuess === randomNumber) {
-        lastResult.Result = "Congrats you go 'er right!";
+        lastResult.textContent = "Congrats you got 'er right!";
         lastResult.style.color = "green";
         lowOrHi.textContent = "";
         setGameOver(); // function yet to be created!!
@@ -45,3 +45,12 @@ function checkGuess() {
 }
 
 guessSubmit.addEventListener("click", checkGuess);
+
+function gameOver() {
+    guessField.disabled = true; // disable text field
+    guessSubmit.disabled = true; // disable the submit button
+    resetButton = document.createElement("button"); // creates new button
+    resetButton.textContent = "Start new game"; // give new button content
+    document.body.append(resetButton); // add button to out HTML
+    resetButton.addEventListener("click", resetGame); // make it clickable; resets game
+}
